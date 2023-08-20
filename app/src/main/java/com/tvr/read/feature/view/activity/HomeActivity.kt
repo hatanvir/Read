@@ -1,11 +1,10 @@
-package com.tvr.read.ui.home
+package com.tvr.read.feature.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.tvr.read.R
 import com.tvr.read.databinding.ActivityHomeBinding
-import com.tvr.read.databinding.ActivityMainBinding
-import com.tvr.read.ui.booksFragment.BookFragment
+import com.tvr.read.feature.view.fragments.BookFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupFragment(BookFragment(),BookFragment.TAG);
+        setupFragment(BookFragment(), BookFragment.TAG);
 
         setupView()
     }
@@ -26,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
         //binding.bottomNavigationView
     }
 
-    private fun setupFragment(fragment: BookFragment,tag:String) {
+    private fun setupFragment(fragment: BookFragment, tag:String) {
         val fragmentTr = this.supportFragmentManager.beginTransaction()
         fragmentTr.replace(R.id.fragmentContainer,fragment)
         fragmentTr.addToBackStack(tag)

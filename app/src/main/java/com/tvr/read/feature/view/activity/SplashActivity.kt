@@ -1,4 +1,4 @@
-package com.tvr.read.ui.splash
+package com.tvr.read.feature.view.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.tvr.read.R
-import com.tvr.read.ui.home.HomeActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this@SplashActivity,HomeActivity::class.java))
+            startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
         }, 3000)
     }
 }

@@ -1,7 +1,8 @@
 package com.tvr.read.di
 
 import androidx.lifecycle.ViewModel
-import com.tvr.read.feature.viewmodels.BookFragmentViewModel
+import com.tvr.read.feature.models.home_book_model.BookModel
+import com.tvr.read.feature.models.home_book_model.BookModelImp
 import com.tvr.read.feature.viewmodels.HomeViewModel
 import dagger.Binds
 import dagger.Module
@@ -10,11 +11,7 @@ import dagger.hilt.components.SingletonComponent
 
 @InstallIn(SingletonComponent::class)
 @Module
-abstract class ViewModelModule {
-
+abstract class ModelModule {
     @Binds
-    abstract fun bindHomeFragmentViewModel(viewModel: HomeViewModel): ViewModel
-
-    @Binds
-    abstract fun bindBookFragmentViewModel(viewModel: BookFragmentViewModel): ViewModel
+    abstract fun bindHomeBookFragmentViewModel(model: BookModelImp): BookModel
 }
