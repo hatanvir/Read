@@ -10,7 +10,7 @@ import dagger.hilt.components.SingletonComponent
 
 @InstallIn(SingletonComponent::class)
 @Module
-abstract class ViewModelModule {
+abstract class  ViewModelModule {
 
     @Binds
     abstract fun bindHomeFragmentViewModel(viewModel: HomeViewModel): ViewModel

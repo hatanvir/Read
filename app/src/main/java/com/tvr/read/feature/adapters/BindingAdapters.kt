@@ -56,6 +56,7 @@ fun setImageUrl(imgView: ImageView, url:String?){
                 Glide.with(imgView.context)
                     .load(url)
                     .signature( ObjectKey(System.currentTimeMillis()))
+                    .centerInside()
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .placeholder(R.drawable.book)
                     .into(imgView)

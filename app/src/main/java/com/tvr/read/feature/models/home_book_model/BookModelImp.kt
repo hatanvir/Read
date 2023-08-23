@@ -9,7 +9,18 @@ import javax.inject.Inject
     private var apiInterface: ApiInterface
 ): BookModel {
      override fun getPopularBookList(callback: RequestCompleteListener<List<Book>>) {
-         val list = mutableListOf<Book>(Book(1,"Test","Test","",1,"https://images.othoba.com/images/thumbs/0324901_-.jpeg"))
+         val list = mutableListOf<Book>(
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+             Book(1,"Test","Test","",1,"https://m.media-amazon.com/images/I/510ZL9jtSjL._SY346_.jpg"),
+         )
          callback.onRequestSuccess(list)
      }
  }

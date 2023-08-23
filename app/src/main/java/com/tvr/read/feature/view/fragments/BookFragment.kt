@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import com.tvr.read.R
-import com.tvr.read.databinding.ActivityHomeBinding
 import com.tvr.read.databinding.FragmentBookBinding
 import com.tvr.read.feature.viewmodels.BookFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,14 +19,16 @@ class BookFragment : Fragment() {
     }
 
     private lateinit var binding: FragmentBookBinding
-    private val bookFragmentViewModel:BookFragmentViewModel by viewModels()
+    lateinit var bookFragmentViewModel: BookFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentBookBinding.inflate(layoutInflater)
 
+        bookFragmentViewModel = ViewModelProvider(this)[BookFragmentViewModel::class.java]
+        bookFragmentViewModel.getPopularBooks()
         binding.viewModel = bookFragmentViewModel
         return binding.root
     }
