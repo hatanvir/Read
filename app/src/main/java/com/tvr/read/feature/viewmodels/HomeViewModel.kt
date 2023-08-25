@@ -10,5 +10,5 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private var bookModel: BookModel
 ): ViewModel() {
-
+    lateinit var toolbarTitle: String
 }
